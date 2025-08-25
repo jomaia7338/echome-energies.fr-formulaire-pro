@@ -99,7 +99,7 @@
     <div class="social-links">
       <a href="#" target="_blank">LinkedIn</a>
       <a href="#" target="_blank">Facebook</a>
-      <a href="#" target="_blank">Twitter</a>
+      <a href="#" target="_blank">Instagram</a>
     </div>
   </div>
 </div>
@@ -113,15 +113,12 @@ const sliderTrack = document.querySelector('.slider-track');
 
 function updateOutput() {
   const kwc = puissance.value;
-  const surface = Math.round(kwc * 6); // approx. 6 m²/kWc
+  const surface = Math.round(kwc * 6);
   puissanceOutput.value = kwc + " kWc – ~" + surface + " m²";
-
-  // Animate slider fill
   const percent = ((kwc - 10) / (200 - 10)) * 100;
   sliderTrack.style.width = percent + "%";
 }
 
-// initial display
 updateOutput();
 </script>
 
