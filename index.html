@@ -46,8 +46,11 @@
 <input type="text" id="localisation" name="localisation" placeholder="Ville / Code postal" required>
 
 <label for="puissance">Puissance souhaitée (kWc)</label>
-<input type="range" id="puissance" name="puissance" min="10" max="200" step="5" value="50" oninput="updateOutput()">
-<output id="puissanceOutput">50 kWc – ~300 m²</output>
+<div class="slider-wrapper">
+  <input type="range" id="puissance" name="puissance" min="10" max="200" step="5" value="50" oninput="updateOutput()">
+  <div class="slider-track"></div>
+  <output id="puissanceOutput">50 kWc – ~300 m²</output>
+</div>
 
 <label for="message">Précisions complémentaires</label>
 <textarea id="message" name="message" rows="4" placeholder="Expliquez votre projet..."></textarea>
@@ -61,7 +64,7 @@
 <!-- CAPTCHA -->
 <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
 
-<button type="submit" class="cta">Envoyer ma demande</button>
+<button type="submit" class="cta pulse">Envoyer ma demande</button>
 
 <p class="confidentialite"><span>🔒</span> Vos données resteront strictement confidentielles et ne seront jamais partagées.</p>
 </form>
@@ -106,11 +109,16 @@
 <script>
 const puissance = document.getElementById('puissance');
 const puissanceOutput = document.getElementById('puissanceOutput');
+const sliderTrack = document.querySelector('.slider-track');
 
 function updateOutput() {
   const kwc = puissance.value;
-  const surface = Math.round(kwc * 6); // approx. 6 m²/kWc standard
+  const surface = Math.round(kwc * 6); // approx. 6 m²/kWc
   puissanceOutput.value = kwc + " kWc – ~" + surface + " m²";
+
+  // Animate slider fill
+  const percent = ((kwc - 10) / (200 - 10)) * 100;
+  sliderTrack.style.width = percent + "%";
 }
 
 // initial display
