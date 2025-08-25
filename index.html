@@ -1,132 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Echome Energies – Étude photovoltaïque sur-mesure</title>
-<link rel="stylesheet" href="style.css">
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echome Energies – Solutions photovoltaïques pour professionnels</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-overlay">
-    <img src="logo.png" alt="Echome Energies" class="logo">
-    <div class="hero-content">
-      <h1>Un investissement durable, une rentabilité immédiate</h1>
-      <p>Recevez votre étude gratuite et personnalisée.<br>Réponse garantie sous 48h par un expert Echome Energies.</p>
-      <a href="#formulaire" class="cta">Demander mon étude</a>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-overlay">
+      <img src="logo.png" alt="Echome Energies" class="logo">
+      <div class="hero-content">
+        <h1>Un investissement durable, une rentabilité immédiate</h1>
+        <p>Recevez votre étude gratuite et personnalisée.<br>Réponse garantie sous 48h par un expert Echome Energies.</p>
+        <a href="#formulaire" class="cta">🚀 Demander mon étude</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- FORMULAIRE -->
-<section class="form-section">
-<div class="container">
-<form action="https://formspree.io/f/xjkoqjky" method="POST">
-
-<label for="structure">Type de structure</label>
-<select name="structure" id="structure" required>
-  <option value="">-- Sélectionnez --</option>
-  <option value="entreprise">Entreprise</option>
-  <option value="collectivite">Collectivité</option>
-  <option value="artisan">Artisan</option>
-  <option value="promoteur">Promoteur</option>
-  <option value="autre">Autre</option>
-</select>
-
-<label for="batiment">Type de bâtiment</label>
-<select name="batiment" id="batiment" required>
-  <option value="">-- Sélectionnez --</option>
-  <option value="industriel">Industriel</option>
-  <option value="tertiaire">Tertiaire</option>
-  <option value="agricole">Agricole</option>
-  <option value="autre">Autre</option>
-</select>
-
-<label for="localisation">Localisation du projet</label>
-<input type="text" id="localisation" name="localisation" placeholder="Ville / Code postal" required>
-
-<label for="puissance">Puissance souhaitée (kWc)</label>
-<div class="slider-wrapper">
-  <input type="range" id="puissance" name="puissance" min="10" max="200" step="5" value="50" oninput="updateOutput()">
-  <div class="slider-track"></div>
-  <output id="puissanceOutput">50 kWc – ~300 m²</output>
-</div>
-
-<label for="message">Précisions complémentaires</label>
-<textarea id="message" name="message" rows="4" placeholder="Expliquez votre projet..."></textarea>
-
-<label for="email">Votre email professionnel</label>
-<input type="email" id="email" name="email" required>
-
-<label for="tel">Téléphone</label>
-<input type="tel" id="tel" name="tel" required>
-
-<!-- CAPTCHA -->
-<div class="g-recaptcha" data-sitekey="6Letqa0rAAAAAFXWiBwhwkZUEkcTfsZd802QdUtu"></div>
-
-<button type="submit" class="cta pulse">Envoyer ma demande</button>
-
-<p class="confidentialite"><span>🔒</span> Vos données resteront strictement confidentielles et ne seront jamais partagées.</p>
-</form>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-<div class="container footer-grid">
-  <div class="footer-col">
-    <h3>Echome Energies</h3>
-    <p>1159 Rue de la Galandrine<br>38210 Saint-Quentin-Sur-Isère</p>
-    <p>Tél : <a href="tel:0476373462">04 76 37 34 62</a></p>
-    <p>Email : <a href="mailto:contact@echome-energies.fr">contact@echome-energies.fr</a></p>
-  </div>
-  <div class="footer-col">
-  <h3>Nos certifications</h3>
-  <div class="certifications">
-    <img src="logo-rge.png" alt="RGE">
-    <img src="logo-qualipv500.png" alt="QualiPV 500">
-    <img src="logo-recharge-elec.png" alt="Recharge Elec+">
-  </div>
-  <a href="https://www.qualit-enr.org/entreprises/echome-energies/" target="_blank">
-    Voir nos certifications
-  </a>
-</div>
-  <div class="footer-col">
-    <h3>Liens utiles</h3>
-    <ul>
-      <li><a href="cgv.html">Conditions Générales de Vente</a></li>
-      <li><a href="mentions-legales.html">Mentions légales</a></li>
-      <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
-    </ul>
-    <h3>Suivez-nous</h3>
-    <div class="social-links">
-      <a href="#" target="_blank">LinkedIn</a>
-      <a href="#" target="_blank">Facebook</a>
-      <a href="#" target="_blank">Instagram</a>
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="container">
+      <h2>Des solutions solaires pensées pour les entreprises et collectivités</h2>
+      <p>Ombrières, toitures industrielles, bâtiments tertiaires…  
+         Nos experts vous accompagnent de l’étude jusqu’à l’installation, avec un suivi complet et certifié RGE.</p>
     </div>
-  </div>
-</div>
-<div class="footer-bottom">&copy; 2025 Echome Energies – Solutions photovoltaïques professionnelles</div>
-</footer>
+  </section>
 
-<script>
-const puissance = document.getElementById('puissance');
-const puissanceOutput = document.getElementById('puissanceOutput');
-const sliderTrack = document.querySelector('.slider-track');
+  <!-- FORMULAIRE -->
+  <section id="formulaire" class="form-section">
+    <div class="container">
+      <h2>Demande d’étude gratuite</h2>
+      <form action="https://formspree.io/f/your-id" method="POST">
+        
+        <label for="structure">Type de structure</label>
+        <select name="structure" id="structure" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="entreprise">Entreprise</option>
+          <option value="collectivite">Collectivité</option>
+          <option value="artisan">Artisan</option>
+          <option value="promoteur">Promoteur</option>
+          <option value="autre">Autre</option>
+        </select>
 
-function updateOutput() {
-  const kwc = puissance.value;
-  const surface = Math.round(kwc * 6);
-  puissanceOutput.value = kwc + " kWc – ~" + surface + " m²";
-  const percent = ((kwc - 10) / (200 - 10)) * 100;
-  sliderTrack.style.width = percent + "%";
-}
+        <label for="batiment">Type de bâtiment</label>
+        <select name="batiment" id="batiment" required>
+          <option value="">-- Sélectionnez --</option>
+          <option value="industriel">Industriel</option>
+          <option value="tertiaire">Tertiaire</option>
+          <option value="agricole">Agricole</option>
+          <option value="autre">Autre</option>
+        </select>
 
-updateOutput();
-</script>
+        <label for="localisation">Localisation du projet</label>
+        <input type="text" id="localisation" name="localisation" placeholder="Ville / Code postal" required>
+
+        <!-- Slider Puissance -->
+        <label for="puissance">Puissance souhaitée (kWc)</label>
+        <input type="range" id="puissance" name="puissance" min="10" max="500" step="10" value="50">
+        <div id="puissance-value">50 kWc</div>
+
+        <label for="message">Précisions complémentaires</label>
+        <textarea id="message" name="message" rows="4" placeholder="Expliquez votre projet..."></textarea>
+
+        <label for="email">Votre email professionnel</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="tel">Téléphone</label>
+        <input type="tel" id="tel" name="tel" required>
+
+        <button type="submit" class="cta">🚀 Envoyer ma demande</button>
+      </form>
+      <p class="confidentialite">🔒 Vos données resteront strictement confidentielles et ne seront jamais partagées.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      
+      <div class="footer-col">
+        <h3>Echome Energies</h3>
+        <p>1159 Rue de la Galandrine<br>38210 Saint-Quentin-Sur-Isère</p>
+        <p>Tél : <a href="tel:0476373462">04 76 37 34 62</a></p>
+        <p>Email : <a href="mailto:contact@echome-energies.fr">contact@echome-energies.fr</a></p>
+      </div>
+
+      <div class="footer-col">
+        <h3>Nos certifications</h3>
+        <div class="certifications-top">
+          <img src="logo-rge.png" alt="RGE">
+          <img src="logo-qualipv500.png" alt="QualiPV 500">
+        </div>
+        <div class="certifications-bottom">
+          <img src="logo-recharge-elec.png" alt="Recharge Elec+">
+        </div>
+        <a href="https://www.qualit-enr.org/entreprises/echome-energies/" target="_blank">Voir le détail</a>
+      </div>
+
+      <div class="footer-col">
+        <h3>Liens utiles</h3>
+        <ul>
+          <li><a href="cgv.html">Conditions Générales de Vente</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+          <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com" target="_blank">📸 Instagram</a><br>
+          <a href="https://www.linkedin.com/company/echome-energies" target="_blank">💼 LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Echome Energies – Solutions photovoltaïques professionnelles</p>
+    </div>
+  </footer>
+
+  <!-- Script Slider -->
+  <script>
+    const slider = document.getElementById("puissance");
+    const output = document.getElementById("puissance-value");
+    output.textContent = slider.value + " kWc";
+
+    slider.oninput = function() {
+      output.textContent = this.value + " kWc";
+    }
+  </script>
 
 </body>
 </html>
