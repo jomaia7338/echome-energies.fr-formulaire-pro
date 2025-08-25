@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Echome Energies – Solutions photovoltaïques pour professionnels</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
 
@@ -75,9 +77,15 @@
         <label for="tel">Téléphone</label>
         <input type="tel" id="tel" name="tel" required>
 
-        <button type="submit" class="cta">Envoyer ma demande</button>
+        <!-- reCAPTCHA -->
+        <div class="recaptcha-container">
+          <div class="g-recaptcha" data-sitekey="TON_SITE_KEY"></div>
+        </div>
+
+        <button type="submit" class="cta">Obtenir mon étude gratuite</button>
       </form>
-      <p class="confidentialite">Vos données resteront strictement confidentielles et ne seront jamais partagées.</p>
+
+      <p class="confidentialite"><span class="lock-icon">🔒</span> Vos données resteront strictement confidentielles et ne seront jamais partagées.</p>
     </div>
   </section>
 
@@ -108,9 +116,13 @@
           <li><a href="mentions-legales.html">Mentions légales</a></li>
           <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
         </ul>
+        <div class="social-links">
+          <a href="#" target="_blank">LinkedIn</a> |
+          <a href="#" target="_blank">Facebook</a> |
+          <a href="#" target="_blank">Twitter</a>
+        </div>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>&copy; 2025 Echome Energies – Solutions photovoltaïques professionnelles</p>
     </div>
@@ -142,6 +154,5 @@
     }
     updatePuissance();
   </script>
-
 </body>
 </html>
