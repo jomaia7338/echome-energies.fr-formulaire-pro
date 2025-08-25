@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echome Énergies - Installations solaires professionnelles</title>
+  <meta name="description" content="Échome Énergies accompagne entreprises et collectivités pour des installations photovoltaïques rentables et certifiées RGE.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="Logo Echome Énergies" class="logo">
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>Votre installation photovoltaïque rentable et certifiée RGE</h1>
+    <p>Recevez gratuitement votre étude personnalisée et découvrez le potentiel solaire de votre bâtiment en moins de 48h</p>
+    <a href="#formulaire" class="btn-hero">📈 Obtenez votre étude gratuite maintenant</a>
+  </div>
+</section>
+
+<!-- Crédibilité / Certifications -->
+<section class="credentials">
+  <h2>Pourquoi nous choisir ?</h2>
+  <ul>
+    <li><i class="fas fa-check-circle"></i> Installations certifiées RGE QualiPV36 & QualiPV500</li>
+    <li><i class="fas fa-check-circle"></i> Équipe expérimentée B2B</li>
+    <li><i class="fas fa-check-circle"></i> Étude personnalisée gratuite sous 48h</li>
+  </ul>
+  <div class="certifications">
+    <a href="https://www.qualit-enr.org/entreprises/echome-energies/" target="_blank">
+      <img src="logo-rge.png" alt="RGE" class="cert-logo">
+      <img src="logo-qualipv500.png" alt="QualiPV500" class="cert-logo">
+      <img src="logo-recharge-elec.png" alt="Recharge Elec+" class="cert-logo">
+    </a>
+  </div>
+</section>
+
+<!-- Coordonnées -->
+<section class="contact">
+  <h2>Contactez-nous</h2>
+  <p>1159 Rue de la Galandrine, 38210 Saint-Quentin-sur-Isère</p>
+  <p>Tél : <a href="tel:+33476373462">04 76 37 34 62</a></p>
+  <p>Email : <a href="mailto:accueil@echome-energies.fr">accueil@echome-energies.fr</a></p>
+  <p>SIRET : 123 456 789 00010 - RCS Grenoble</p>
+</section>
+
+<!-- Formulaire -->
+<section id="formulaire">
+  <h2>Demandez votre étude gratuite</h2>
+  <form id="contact-form" action="https://formspree.io/f/xjkoqjky" method="POST">
+    
+    <label for="type_structure">Type de structure</label>
+    <select id="type_structure" name="type_structure" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="entreprise">Entreprise</option>
+      <option value="collectivite">Collectivité</option>
+      <option value="artisan">Artisan / TPE</option>
+      <option value="promoteur">Promoteur immobilier</option>
+      <option value="autre">Autre</option>
+    </select>
+
+    <label for="type_batiment">Type de bâtiment</label>
+    <select id="type_batiment" name="type_batiment" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="bureau">Bureaux</option>
+      <option value="industrie">Industriel / Atelier</option>
+      <option value="commerce">Commerce / Magasin</option>
+      <option value="public">Bâtiment public</option>
+      <option value="autre">Autre</option>
+    </select>
+
+    <label for="localisation">Localisation</label>
+    <input type="text" id="localisation" name="localisation" placeholder="Ville ou code postal" required>
+
+    <label for="puissance">Puissance souhaitée (kWc)</label>
+    <select id="puissance" name="puissance" required>
+      <option value="">-- Sélectionnez --</option>
+      <option value="10">10 kWc – Petite structure</option>
+      <option value="30">30 kWc – Bâtiment moyen</option>
+      <option value="50">50 kWc – Grand bâtiment industriel</option>
+      <option value="100">100 kWc – Très grande structure</option>
+      <option value="autre">Autre</option>
+    </select>
+    <textarea id="puissance_autre" name="puissance_autre" placeholder="Précisez votre projet si 'Autre'" style="display:none;"></textarea>
+
+    <label for="nom">Nom et prénom</label>
+    <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+
+    <label for="email">Email professionnel</label>
+    <input type="email" id="email" name="email" placeholder="exemple@entreprise.com" required>
+
+    <label for="telephone">Téléphone</label>
+    <input type="tel" id="telephone" name="telephone" placeholder="Ex : 04 76 37 34 62" required>
+
+    <div class="g-recaptcha" data-sitekey="6Letqa0rAAAAAFXWiBwhwkZUEkcTfsZd802QdUtu"></div>
+
+    <button type="submit" class="btn-submit">📈 Recevoir mon étude gratuite</button>
+  </form>
+
+  <div id="confirmationMessage" class="hidden">
+    Merci ! Votre demande a bien été reçue. Nos experts vous recontacteront sous 48h.
+  </div>
+
+  <div class="rgpd">
+    <p>En soumettant ce formulaire, vous acceptez que vos données soient utilisées pour vous recontacter dans le cadre de votre projet solaire. <a href="politique-confidentialite.html">En savoir plus</a></p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-columns">
+    <div class="footer-col">
+      <p><strong>Echome Énergies</strong></p>
+      <p>1159 Rue de la Galandrine, 38210 Saint-Quentin-sur-Isère</p>
+      <p>Tél : <a href="tel:+33476373462">04 76 37 34 62</a></p>
+      <p>Email : <a href="mailto:accueil@echome-energies.fr">accueil@echome-energies.fr</a></p>
+      <p>SIRET : 123 456 789 00010 - RCS Grenoble</p>
+    </div>
+    <div class="footer-col">
+      <p><a href="cgv.html">CGV</a></p>
+      <p><a href="mentions-legales.html">Mentions légales</a></p>
+      <p><a href="politique-confidentialite.html">Politique de confidentialité</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const form = document.getElementById("contact-form");
+const confirmation = document.getElementById("confirmationMessage");
+const selectPuissance = document.getElementById("puissance");
+const textareaAutre = document.getElementById("puissance_autre");
+
+selectPuissance.addEventListener("change", () => {
+  if(selectPuissance.value === "autre"){
+    textareaAutre.style.display = "block";
+    textareaAutre.required = true;
+  } else {
+    textareaAutre.style.display = "none";
+    textareaAutre.required = false;
+  }
+});
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  });
+  if(response.ok){
+    confirmation.classList.remove("hidden");
+    form.reset();
+    textareaAutre.style.display = "none";
+    confirmation.scrollIntoView({behavior:"smooth"});
+  } else {
+    alert("Une erreur est survenue. Veuillez réessayer.");
+  }
+});
+</script>
+
+</body>
+</html>
