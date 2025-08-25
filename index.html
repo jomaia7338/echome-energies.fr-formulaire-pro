@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Échome Énergies – Solutions photovoltaïques pour professionnels</title>
+  <title>Echome Energies – Solutions photovoltaïques pour professionnels</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,10 +11,10 @@
   <!-- HERO -->
   <header class="hero">
     <div class="hero-overlay">
-      <img src="logo.png" alt="Échome Énergies" class="logo">
+      <img src="logo.png" alt="Echome Energies" class="logo">
       <div class="hero-content">
         <h1>Un investissement durable, une rentabilité immédiate</h1>
-        <p>Recevez votre étude gratuite et personnalisée.<br>Réponse garantie sous 48h par un expert Échome Énergies.</p>
+        <p>Recevez votre étude gratuite et personnalisée.<br>Réponse garantie sous 48h par un expert Echome Energies.</p>
         <a href="#formulaire" class="cta">Demander mon étude</a>
       </div>
     </div>
@@ -34,7 +34,7 @@
     <div class="container">
       <h2>Demandez votre étude gratuite</h2>
       <form action="https://formspree.io/f/your-id" method="POST">
-        
+
         <label for="structure">Type de structure</label>
         <select name="structure" id="structure" required>
           <option value="">-- Sélectionnez --</option>
@@ -57,15 +57,14 @@
         <label for="localisation">Localisation du projet</label>
         <input type="text" id="localisation" name="localisation" placeholder="Ville / Code postal" required>
 
-        <label for="puissance">Surface disponible ou puissance estimée</label>
-        <select name="puissance" id="puissance" required>
-          <option value="">-- Sélectionnez --</option>
-          <option value="petite">50 à 100 m² (≈ 10 à 20 kWc)</option>
-          <option value="moyenne">100 à 250 m² (≈ 20 à 50 kWc)</option>
-          <option value="grande">250 à 500 m² (≈ 50 à 100 kWc)</option>
-          <option value="tres-grande">+500 m² (projets > 100 kWc)</option>
-          <option value="autre">Autre (à préciser dans le message)</option>
-        </select>
+        <!-- SLIDER PUISSANCE -->
+        <label for="surface">Surface disponible (m²)</label>
+        <div class="slider-wrapper">
+          <input type="range" id="surface" name="surface" min="50" max="1500" step="10" value="100" oninput="updatePuissance()">
+          <span id="puissanceBadge" class="puissance-badge">20 kWc</span>
+        </div>
+        <output id="surfaceValue">100</output> m²
+        <input type="hidden" id="puissance" name="puissance">
 
         <label for="message">Précisions complémentaires</label>
         <textarea id="message" name="message" rows="4" placeholder="Expliquez votre projet..."></textarea>
@@ -85,9 +84,8 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
-      
       <div class="footer-col">
-        <h3>Échome Énergies</h3>
+        <h3>Echome Energies</h3>
         <p>ZI La Galicière<br>38210 Saint-Quentin-sur-Isère</p>
         <p>Tél : <a href="tel:0476373462">04 76 37 34 62</a></p>
         <p>Email : <a href="mailto:contact@echome-energies.fr">contact@echome-energies.fr</a></p>
@@ -114,9 +112,36 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2025 Échome Énergies – Solutions photovoltaïques professionnelles</p>
+      <p>&copy; 2025 Echome Energies – Solutions photovoltaïques professionnelles</p>
     </div>
   </footer>
+
+  <script>
+    function updatePuissance() {
+      const surface = parseInt(document.getElementById('surface').value);
+      document.getElementById('surfaceValue').textContent = surface;
+      let puissance = Math.round(surface / 5);
+      document.getElementById('puissance').value = puissance;
+
+      const slider = document.getElementById('surface');
+      const badge = document.getElementById('puissanceBadge');
+      badge.textContent = puissance + ' kWc';
+
+      const min = parseInt(slider.min);
+      const max = parseInt(slider.max);
+      const percent = (surface - min) / (max - min);
+      badge.style.left = `calc(${percent * 100}% - ${badge.offsetWidth/2}px)`;
+
+      if(surface <= 250) badge.style.backgroundColor = '#4CAF50';
+      else if(surface <= 500) badge.style.backgroundColor = '#FFC107';
+      else badge.style.backgroundColor = '#F44336';
+
+      badge.classList.remove('bounce');
+      void badge.offsetWidth;
+      badge.classList.add('bounce');
+    }
+    updatePuissance();
+  </script>
 
 </body>
 </html>
