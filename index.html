@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Echome Energies – Formulaire Professionnel</title>
+  <title>Echome Energies – Étude photovoltaïque sur-mesure</title>
   <link rel="stylesheet" href="../landing/style.css">
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
@@ -17,13 +17,17 @@
     button.cta:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.25); }
     .confidentialite { margin-top:15px; font-size:0.9rem; color:#555; display:flex; align-items:center; gap:8px; }
     .confidentialite img { width:16px; height:16px; }
+    input[type="range"] { width:100%; margin-top:10px; }
+    output { display:block; text-align:right; margin-top:5px; font-weight:bold; }
   </style>
 </head>
 <body>
 
 <section class="form-section">
   <div class="container">
-    <h2>Demandez votre étude photovoltaïque professionnelle</h2>
+    <h2>Obtenez votre étude photovoltaïque sur-mesure</h2>
+    <p>Indiquez vos informations pour recevoir une estimation personnalisée et adaptée à votre projet professionnel.</p>
+
     <form action="https://formspree.io/f/your-id" method="POST">
 
       <label for="structure">Type de structure</label>
@@ -48,15 +52,9 @@
       <label for="localisation">Localisation du projet</label>
       <input type="text" id="localisation" name="localisation" placeholder="Ville / Code postal" required>
 
-      <label for="puissance">Surface disponible ou puissance estimée</label>
-      <select name="puissance" id="puissance" required>
-        <option value="">-- Sélectionnez --</option>
-        <option value="10-20">50 à 100 m² (≈ 10 à 20 kWc)</option>
-        <option value="20-50">100 à 250 m² (≈ 20 à 50 kWc)</option>
-        <option value="50-100">250 à 500 m² (≈ 50 à 100 kWc)</option>
-        <option value="100+">+500 m² (projets > 100 kWc)</option>
-        <option value="autre">Autre (à préciser dans le message)</option>
-      </select>
+      <label for="puissance">Puissance souhaitée (kWc)</label>
+      <input type="range" id="puissance" name="puissance" min="10" max="200" step="5" value="50" oninput="puissanceOutput.value = puissance.value + ' kWc'">
+      <output id="puissanceOutput">50 kWc</output>
 
       <label for="message">Précisions complémentaires</label>
       <textarea id="message" name="message" rows="4" placeholder="Expliquez votre projet..."></textarea>
@@ -78,6 +76,15 @@
     </form>
   </div>
 </section>
+
+<script>
+  const puissance = document.getElementById('puissance');
+  const puissanceOutput = document.getElementById('puissanceOutput');
+  puissanceOutput.value = puissance.value + " kWc";
+  puissance.addEventListener('input', () => {
+    puissanceOutput.value = puissance.value + " kWc";
+  });
+</script>
 
 </body>
 </html>
