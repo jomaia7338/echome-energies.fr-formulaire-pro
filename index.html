@@ -110,23 +110,6 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq">
-    <h2>Questions fréquentes</h2>
-    <div class="faq-item">
-      <button class="faq-question">Proposez-vous un suivi après installation ?</button>
-      <div class="faq-answer">
-        <p>Le suivi peut être mis en place selon votre demande et votre type de projet, incluant reporting et maintenance optionnelle.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Quels types de bâtiments sont adaptés ?</button>
-      <div class="faq-answer">
-        <p>Industriels, tertiaires, agricoles, collectivités… Echome Energies propose des solutions sur mesure.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
@@ -165,7 +148,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT FORMULAIRE AJAX, SLIDER ET FAQ -->
+  <!-- SCRIPT FORMULAIRE AJAX, SLIDER -->
   <script>
     // SLIDER
     const slider = document.getElementById("puissance");
@@ -206,13 +189,6 @@
       })
       .catch(error => {
         alert('Oups ! Une erreur est survenue, réessayez plus tard.');
-      });
-    });
-
-    // FAQ
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        q.parentElement.classList.toggle('active');
       });
     });
   </script>
